@@ -16,6 +16,19 @@ You can put your software anywhere you want it, for this example we will be stor
 
 *As root*
 
+edit `/etc/sysctl.conf` and add the following line (if it does not already exist)
+
+vm.max_map_count = 262144
+
+Now to prevent having to restart your machine, also execute the same command from the CLI: 
+
+`sysctl -w vm.max_map_count=262144`
+
+check that the value stuck by using `sysctl vm.max_map_count`
+
+
+
+
 
 ```
 mkdir -p /opt/apps/cofeit
