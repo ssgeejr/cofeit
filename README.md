@@ -27,8 +27,7 @@ Now to prevent having to restart your machine, also execute the same command fro
 check that the value stuck by using `sysctl vm.max_map_count`
 
 
-
-
+Now we need to setup some folders and folder permissions 
 
 ```
 mkdir -p /opt/apps/cofeit
