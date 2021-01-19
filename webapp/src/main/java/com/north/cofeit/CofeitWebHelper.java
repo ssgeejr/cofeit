@@ -1,8 +1,8 @@
-package com.814north.cofeit;
+package com.north.cofeit;
 
 public class CofeitWebHelper{
 
-public CofeitWebHelper(){
+public void CofeitWebHelper(){
   try{
 	//NOTHING TO SEE HERE
   }catch(Exception ex){
