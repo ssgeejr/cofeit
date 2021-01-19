@@ -4,7 +4,6 @@ services:
    registry:
       image: registry:2
       container_name: registry
-      #restart: always
       volumes:
          - /opt/apps/cofeit/registry:/var/lib/registry
       ports:
@@ -12,7 +11,6 @@ services:
    db:
       image: postgres:9.5.24-alpine
       container_name: db
-      #restart: always
       environment:
          - POSTGRES_USER=sonar
          - POSTGRES_PASSWORD=sonar
@@ -22,7 +20,6 @@ services:
    sonar:
       image: sonarqube:8.6.0-community
       container_name: sonar
-      #restart: always
       ports:
          - "9000:9000"
       environment:
@@ -39,12 +36,11 @@ services:
    jenkins:
       image: jenkins/jenkins:lts
       container_name: jenkins
-      #restart: always
       volumes:
          - /opt/apps/cofeit/jenkins_home:/var/jenkins_home
       ports:
          - '8080:8080'
          - '50000:50000'
-      #depends_on:
-      #   - registry
-      #   - sonar
+      depends_on:
+         - registry
+         - sonar
