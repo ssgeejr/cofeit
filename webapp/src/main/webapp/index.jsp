@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="com.814north.cofiet.CofeitWebHelper"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +10,6 @@
 </head>
 <body>
 	<div align="center">
-		<h1>HELLO WORLD!</h1> 
+		<h1><%= new CofeitWebHelper.fetchMessage() %></h1> 
 	</div>
 </body>
