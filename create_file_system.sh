@@ -3,6 +3,9 @@
 echo "Creating Application home ..."
 mkdir -p /opt/apps/cofeit
 
+echo "Creating docker registry home ..."
+mkdir /opt/apps/cofeit/registry
+
 echo "Creating Postgres data home ..."
 mkdir /opt/apps/cofeit/postgresql
 mkdir /opt/apps/cofeit/postgresql/data

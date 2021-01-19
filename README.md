@@ -20,6 +20,8 @@ You can put your software anywhere you want it, for this example we will be stor
 ```
 mkdir -p /opt/apps/cofeit
 
+mkdir /opt/apps/cofeit/registry 
+
 mkdir /opt/apps/cofeit/postgresql
 mkdir /opt/apps/cofeit/postgresql/data
 

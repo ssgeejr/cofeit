@@ -5,6 +5,8 @@ services:
       image: registry:2
       container_name: registry
       #restart: always
+      volumes:
+         - /opt/apps/cofeit/registry:/var/lib/registry
       ports:
          - "5000:5000"
    db:
