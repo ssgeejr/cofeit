@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+   registry:
+      image: registry:2
+      container_name: registry
+      #restart: always
+      ports:
+         - "5000:5000"
+   db:
+      image: postgres:9.5.24-alpine
+      container_name: db
+      #restart: always
+      environment:
+         - POSTGRES_USER=sonar
+         - POSTGRES_PASSWORD=sonar
+      volumes:
+         - /opt/apps/cofeit/postgresql
+         - /opt/apps/cofeit/postgresql/data
+   sonar:
+      image: sonarqube:8.6.0-community
+      container_name: sonar
+      #restart: always
+      ports:
+         - "9000:9000"
+      environment:
+         - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
+         - sonar.jdbc.username=sonar
+         - sonar.jdbc.password=sonar
+      volumes:
+         - /opt/apps/cofeit/sonarqube/conf
+         - /opt/apps/cofeit/sonarqube/data
+         - /opt/apps/cofeit/sonarqube/extensions
+         - /opt/apps/cofeit/sonarqube/lib/bundled-plugins
+      depends_on:
+         - db
+   jenkins:
+      image: jenkins/jenkins:2.60.3
+      container_name: jenkins
+      #restart: always
+      volumes:
+         - /opt/apps/cofeit/jenkins_home:/var/jenkins_home
+      ports:
+         - '8080:8080'
+         - '50000:50000'
+      depends_on:
+         - registry
+         - sonar
