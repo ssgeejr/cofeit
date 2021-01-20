@@ -29,6 +29,9 @@ check that the value stuck by using `sysctl vm.max_map_count`
 
 Now we need to setup some folders and folder permissions 
 
+*Note* If you want to take teh shortest distance between two points, review/edit the create_file_system.sh
+Once you are happy with it, you can run it with `./create_file_system.sh`
+
 ```
 mkdir -p /opt/apps/cofeit
 
@@ -71,25 +74,22 @@ docker pull hello-world
 docker tag hello-world localhost:5000/hello-world
 docker push localhost:5000/hello-world
 ```
-
 Now test to see if the push registered
 
 `curl -ik http://localhost:5000/v2/_catalog`
 
-
 ## sonarqube 
-
-
-
-## nexus
-
+This one is pretty much hands-off ... start it and go.  You can connect to it over http://<IP>:9000 
 
 
 ## jenkins 
 
+This is the one that will take some time to configure and execute, it takes some time. 
+
 
 
 ## Registry UI's 
+_NOT IMPLEMENTED_
 
 https://github.com/atcol/docker-registry-ui
 
