@@ -34,10 +34,12 @@ services:
       depends_on:
          - db
    jenkins:
-      image: jenkins/jenkins:lts
+      #image: jenkins/jenkins:lts
+      image: jenkins:cofeit
       container_name: jenkins
       volumes:
          - /var/run/docker.sock:/var/run/docker.sock
+         - /usr/bin/docker:/usr/bin/docker
          - /opt/apps/cofeit/jenkins_home:/var/jenkins_home
       ports:
          - '8080:8080'

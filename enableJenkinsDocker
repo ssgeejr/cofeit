@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo ""
+echo "This script will add the admin user (uid: 1000) to the docker group"
+echo "and then set /var/run/docker.sock with permissions of 666"
+
+read -r -p "Are you sure? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+	uname=`getent passwd "1000" | cut -d: -f1`
+	#if [ -z "$uname" ]; then
+	if [ -z "$uname" ]; then
+      		echo "UID(1000) is not assigned"
+		echo "XXXXX SINCE I HAVE THIS USER - I DIDN'T IMPLEMENT THIS CODE BLOCK XXXXX"
+		echo "create a jenkins users with the following command and rerun the script" 
+		echo "adduser --disabled-password --uid 1000 --gecos "" jenkins"
+	else
+      		echo "found UID(1000) assigned to ${uname}"
+		sudo usermod -aG docker $uname
+		echo "user ${uname} assigned to docker group"
+		sudo chmod 666 /var/run/docker.sock
+		echo "docker.sock updated"
+	fi
+        ;;
+    *)
+        echo "Changes not made" 
+        ;;
+esac

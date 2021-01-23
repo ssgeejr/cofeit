@@ -1,0 +1,13 @@
+#!/bin/bash
+cwd=`pwd`
+
+echo "Buidling Jenkins Image: jenkins:cofeit"
+docker rmi -f jenkins:cofeit
+
+cd jenkins
+docker build -t jenkins:cofeit .
+
+
+
+echo "returning to working directory: ${cwd}"
+cd $cwd
