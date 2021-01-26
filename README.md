@@ -138,6 +138,23 @@ TO start sonarqube with a standalone db
 This is the one that will take some time to configure and execute, it takes some time. 
 
 
+#Create a new job, the Git repo: 
+https://github.com/ssgeejr/cofeit.git
+
+#branch
+*/main
+
+
+#in the build [script] section add
+cd webapp
+mvn clean package
+cd docker
+#docker build -t cofeit:${BUILD_NUMBER} .
+docker build -t localhost:5000/cofeit:1 .
+docker push localhost:5000/cofeit:1
+
+
+
 
 ## Registry UI's 
 _NOT IMPLEMENTED_
