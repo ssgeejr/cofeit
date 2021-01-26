@@ -1,0 +1,14 @@
+- name: Create a tomcat8 container
+  docker_container:
+    name: dc01
+    image: tomcat:8
+    state: started
+    ports:
+      - "8088:8080"
+- name: Create a tomcat9 container
+  docker_container:
+    name: dc02
+    image: tomcat:9
+    state: started
+    ports:
+      - "8089:8080"

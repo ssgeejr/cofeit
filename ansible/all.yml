@@ -5,3 +5,9 @@
     - tomcat
   tags:
     - tomcat
+- name: start tomcat images using docker
+  hosts: all
+  roles:
+    - docktest
+  tags:
+    - docktest
