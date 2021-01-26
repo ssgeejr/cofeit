@@ -1,0 +1,7 @@
+---
+- name: start tomcat image
+  hosts: all
+  roles:
+    - tomcat
+  tags:
+    - tomcat

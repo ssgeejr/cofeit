@@ -1,0 +1,7 @@
+- name: Create a data container
+  docker_container:
+    name: tcat
+    image: "{{ image }}:{{ version }}"
+    state: started
+    ports:
+      - "8088:8080"

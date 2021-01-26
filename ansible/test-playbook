@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#ansible-playbook -i inventory.yml d-play.yml
+#ansible-playbook -i inventory.yml all.yml -t tomcat
+ansible-playbook -i inventory.yml all.yml -t tomcat
