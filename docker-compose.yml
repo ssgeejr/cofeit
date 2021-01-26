@@ -44,6 +44,6 @@ services:
       ports:
          - '8080:8080'
          - '50000:50000'
-      depends_on:
-         - registry
-         - sonar
+#      depends_on:
+#         - registry
+#         - sonar

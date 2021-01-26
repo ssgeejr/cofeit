@@ -2,7 +2,7 @@
 
 user=cicdops
 group=devops
-cofeitdir=${cofeitdir}
+cofeitdir=/opt/apps/cofeit
 
 
 echo "Creating Application home ..."
