@@ -148,12 +148,26 @@ https://github.com/ssgeejr/cofeit.git
 #in the build [script] section add
 cd webapp
 mvn clean package
+mvn sonar:sonar
 cd docker
 #docker build -t cofeit:${BUILD_NUMBER} .
 docker build -t localhost:5000/cofeit:1 .
 docker push localhost:5000/cofeit:1
 
 
+
+
+## Sonarqube
+
+Log in admin/admin  (reset password)
+
+Enable anyone to analize: 
+```
+Configuration:
+ - Security
+  -Security
+   - (uncheck) Force user authentication
+```
 
 
 ## Registry UI's 
