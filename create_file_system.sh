@@ -26,6 +26,12 @@ mkdir ${cofeitdir}/sonarqube/lib/bundled-plugins
 echo "Creating Jenkins home ..."
 mkdir ${cofeitdir}/jenkins_home
 
+echo "Creating Gitlab home ..."
+mkdir ${cofeitdir}/gitlab
+mkdir ${cofeitdir}/gitlab/config
+mkdir ${cofeitdir}/gitlab/logs
+mkdir ${cofeitdir}/gitlab/data
+
 
 echo "Setting ownership and permission ..."
 chown -R ${user}:${group} ${cofeitdir}
