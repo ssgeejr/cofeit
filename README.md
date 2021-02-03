@@ -19,8 +19,10 @@ You can put your software anywhere you want it, for this example we will be stor
 
 edit `/etc/sysctl.conf` and add the following line (if it does not already exist)
 
+```
 vm.max_map_count=262144
 fs.file-max=65536
+```
 
 Now to prevent having to restart your machine, also execute the same command from the CLI: 
 
