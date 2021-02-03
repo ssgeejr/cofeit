@@ -17,7 +17,7 @@ You can put your software anywhere you want it, for this example we will be stor
 
 *As root*
 
-edit `/etc/sysctl.conf` and add the following line (if it does not already exist)
+edit `/etc/sysctl.conf` and add the following two lines (if they do not already exist)
 
 ```
 vm.max_map_count=262144
