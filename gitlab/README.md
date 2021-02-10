@@ -40,4 +40,9 @@ web:
 Once it starts up - and it does take some time ... create your password. 
 To login, use 'root' and '<your password>' 
 
+Create a simple web-app that we can work with: 
 
+mvn archetype:generate \
+-DarchetypeGroupId=org.apache.maven.archetypes \
+-DarchetypeArtifactId=maven-archetype-webapp \
+-DarchetypeVersion=1.4 
