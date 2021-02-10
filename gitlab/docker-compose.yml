@@ -4,13 +4,13 @@ services:
   web:
     image: 'gitlab/gitlab-ee:latest'
     restart: always
-    hostname: 'gitlab.example.com'
+    hostname: 'splunkqa'
   #  environment:
     #  GITLAB_OMNIBUS_CONFIG: |
     #   external_url 'https://gitlab.example.com'
     #   #Add any other gitlab.rb configuration here, each on its own line
     ports:
-      - '8081:80'
+      - '80:80'
       - '8443:443'
 #      - '22:22'
     volumes:

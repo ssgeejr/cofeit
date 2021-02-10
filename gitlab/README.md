@@ -37,5 +37,7 @@ web:
     - '$GITLAB_HOME/data:/var/opt/gitlab'
 ```
 
+Once it starts up - and it does take some time ... create your password. 
+To login, use 'root' and '<your password>' 
 
 
