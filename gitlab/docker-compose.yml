@@ -17,7 +17,7 @@ services:
       - /opt/apps/cicdmojo/gitlab/data:/var/opt/gitlab
 
   gitlab-runner:
-    image: gitlab/gitlab-runner:alpine
+    image: gitlab/gitlab-runner:latest
     restart: unless-stopped
     depends_on:
       - gitlab
