@@ -23,5 +23,5 @@
 hs_err_pid*
 
 
-webapp/target
-target
+webapp/target/
+target/

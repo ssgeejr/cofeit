@@ -1,5 +1,4 @@
-version: "3.8"
-
+version: '3.5'
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
@@ -15,6 +14,8 @@ services:
       - /opt/apps/cofeit/gitlab/config:/etc/gitlab
       - /opt/apps/cofeit/gitlab/logs:/var/log/gitlab
       - /opt/apps/cofeit/gitlab/data:/var/opt/gitlab
+    networks:
+      - gitlab
 
   gitlab-runner:
     image: gitlab/gitlab-runner:alpine
@@ -24,3 +25,8 @@ services:
     volumes:
       - /opt/apps/cofeit/gitlab-runner/config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - gitlab
+
+networks:
+  gitlab:
