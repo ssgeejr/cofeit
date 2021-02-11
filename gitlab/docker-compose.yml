@@ -3,7 +3,7 @@ version: "3.8"
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
-    hostname: bebop.network
+    hostname: cicdmojo.live
     restart: unless-stopped
     environment:
       GITLAB_OMNIBUS_CONFIG: |
@@ -12,9 +12,9 @@ services:
       - "8000:80"
       - "8822:22"
     volumes:
-      - /opt/apps/cofeit/gitlab/config:/etc/gitlab
-      - /opt/apps/cofeit/gitlab/logs:/var/log/gitlab
-      - /opt/apps/cofeit/gitlab/data:/var/opt/gitlab
+      - /opt/apps/cicdmojo/gitlab/config:/etc/gitlab
+      - /opt/apps/cicdmojo/gitlab/logs:/var/log/gitlab
+      - /opt/apps/cicdmojo/gitlab/data:/var/opt/gitlab
 
   gitlab-runner:
     image: gitlab/gitlab-runner:alpine
@@ -22,5 +22,5 @@ services:
     depends_on:
       - gitlab
     volumes:
-      - /opt/apps/cofeit/gitlab-runner/config:/etc/gitlab-runner
+      - /opt/apps/cicdmojo/gitlab-runner/config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock

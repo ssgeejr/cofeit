@@ -31,6 +31,7 @@ mkdir ${cofeitdir}/gitlab
 mkdir ${cofeitdir}/gitlab/config
 mkdir ${cofeitdir}/gitlab/logs
 mkdir ${cofeitdir}/gitlab/data
+mkdir ${cofeitdir}/gitlab-runner/config
 
 
 echo "Setting ownership and permission ..."

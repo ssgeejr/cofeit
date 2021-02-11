@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p /opt/apps/cicdmojo/gitlab/config
+mkdir -p /opt/apps/cicdmojo/gitlab/logs
+mkdir -p /opt/apps/cicdmojo/gitlab/data
+mkdir -p /opt/apps/cicdmojo/gitlab-runner/config
